@@ -441,6 +441,12 @@ const buildMergeEvent = async (user: AuthUser, previous: StoreObject, instance: 
   const message = generateMergeMessage(instance, sourceEntities);
   const previousStix = convertStoreToStix(previous) as StixCoreObject;
   const currentStix = convertStoreToStix(instance) as StixCoreObject;
+  if ('extensions' in currentStix
+      && 'extension-definition--ea279b3e-5c71-4632-ac08-831c66a786ba' in currentStix.extensions
+      && 'stix_ids' in currentStix.extensions['extension-definition--ea279b3e-5c71-4632-ac08-831c66a786ba']
+      && currentStix.extensions['extension-definition--ea279b3e-5c71-4632-ac08-831c66a786ba'].stix_ids.length > 1000) {
+    currentStix.extensions['extension-definition--ea279b3e-5c71-4632-ac08-831c66a786ba'].stix_ids = currentStix.extensions['extension-definition--ea279b3e-5c71-4632-ac08-831c66a786ba'].stix_ids.slice(-1000, 0);
+  }
   return {
     version: EVENT_CURRENT_VERSION,
     type: EVENT_TYPE_MERGE,
@@ -482,6 +488,12 @@ export const buildStixUpdateEvent = (user: AuthUser, previousStix: StixCoreObjec
   if (patch.length === 1 && patch[0].path === '/modified') {
     throw UnsupportedError('Update event must contains more operation than just modified/updated_at value');
   }
+  if ('extensions' in stix
+      && 'extension-definition--ea279b3e-5c71-4632-ac08-831c66a786ba' in stix.extensions
+      && 'stix_ids' in stix.extensions['extension-definition--ea279b3e-5c71-4632-ac08-831c66a786ba']
+      && stix.extensions['extension-definition--ea279b3e-5c71-4632-ac08-831c66a786ba'].stix_ids.length > 1000) {
+    stix.extensions['extension-definition--ea279b3e-5c71-4632-ac08-831c66a786ba'].stix_ids = stix.extensions['extension-definition--ea279b3e-5c71-4632-ac08-831c66a786ba'].stix_ids.slice(-1000, 0);
+  }
   return {
     version: EVENT_CURRENT_VERSION,
     type: EVENT_TYPE_UPDATE,
@@ -520,6 +532,12 @@ export const storeUpdateEvent = async (context: AuthContext, user: AuthUser, pre
 // Create
 export const buildCreateEvent = (user: AuthUser, instance: StoreObject, message: string): StreamDataEvent => {
   const stix = convertStoreToStix(instance) as StixCoreObject;
+  if ('extensions' in stix
+      && 'extension-definition--ea279b3e-5c71-4632-ac08-831c66a786ba' in stix.extensions
+      && 'stix_ids' in stix.extensions['extension-definition--ea279b3e-5c71-4632-ac08-831c66a786ba']
+      && stix.extensions['extension-definition--ea279b3e-5c71-4632-ac08-831c66a786ba'].stix_ids.length > 1000) {
+    stix.extensions['extension-definition--ea279b3e-5c71-4632-ac08-831c66a786ba'].stix_ids = stix.extensions['extension-definition--ea279b3e-5c71-4632-ac08-831c66a786ba'].stix_ids.slice(-1000, 0);
+  }
   return {
     version: EVENT_CURRENT_VERSION,
     type: EVENT_TYPE_CREATE,
