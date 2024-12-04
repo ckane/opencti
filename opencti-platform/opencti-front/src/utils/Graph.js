@@ -478,7 +478,10 @@ export const buildCorrelationData = (
     filterAdjust.markedBy,
     filterAdjust.createdBy,
   );
-  const thisReportNodes = thisReportOriginalNodes.map((n) => R.assoc('disabled', filteredNodesIds.includes(n.id), n));
+  const thisReportNodes = R.filter(
+    (n) => !filteredNodesIds.includes(n.id),
+    thisReportOriginalNodes,
+  );
   const thisReportLinkNodes = R.filter(
     (n) => n.parent_types && R.any((k) => n[k] && ((key === k && n[k].edges.length > 1) || (key !== k && n[k].edges.length > 0)))(related_types),
     thisReportNodes,
