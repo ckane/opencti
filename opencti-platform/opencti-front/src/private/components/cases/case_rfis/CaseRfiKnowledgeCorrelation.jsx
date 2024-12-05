@@ -1305,7 +1305,7 @@ const CaseRfiKnowledgeCorrelation = createFragmentContainer(
                   x_opencti_order
                   x_opencti_color
                 }
-                reports(first: 20) {
+                reports(first: 500000) {
                   edges {
                     node {
                       id
@@ -1332,7 +1332,7 @@ const CaseRfiKnowledgeCorrelation = createFragmentContainer(
                     }
                   }
                 }
-                groupings(first: 20) {
+                groupings(first: 500000) {
                   edges {
                     node {
                       id
@@ -1359,7 +1359,7 @@ const CaseRfiKnowledgeCorrelation = createFragmentContainer(
                     }
                   }
                 }
-                cases(first: 20) {
+                cases(first: 500000) {
                   edges {
                     node {
                       id
@@ -1463,7 +1463,7 @@ const CaseRfiKnowledgeCorrelation = createFragmentContainer(
               }
               ... on StixCyberObservable {
                 observable_value
-                reports(first: 20) {
+                reports(first: 500000) {
                   edges {
                     node {
                       id
@@ -1490,7 +1490,7 @@ const CaseRfiKnowledgeCorrelation = createFragmentContainer(
                     }
                   }
                 }
-                groupings(first: 20) {
+                groupings(first: 500000) {
                   edges {
                     node {
                       id
@@ -1517,7 +1517,7 @@ const CaseRfiKnowledgeCorrelation = createFragmentContainer(
                     }
                   }
                 }
-                cases(first: 20) {
+                cases(first: 500000) {
                   edges {
                     node {
                       id

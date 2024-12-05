@@ -1278,7 +1278,7 @@ const ReportKnowledgeCorrelation = createFragmentContainer(
           x_opencti_order
           x_opencti_color
         }
-        objects(first: 500) {
+        objects(first: 500000) {
           edges {
             node {
               ... on BasicObject {
@@ -1302,7 +1302,7 @@ const ReportKnowledgeCorrelation = createFragmentContainer(
                   x_opencti_order
                   x_opencti_color
                 }
-                groupings(first: 20) {
+                groupings(first: 500000) {
                   edges {
                     node {
                       id
@@ -1329,7 +1329,7 @@ const ReportKnowledgeCorrelation = createFragmentContainer(
                     }
                   }
                 }
-                reports(first: 20) {
+                reports(first: 500000) {
                   edges {
                     node {
                       id
@@ -1356,7 +1356,7 @@ const ReportKnowledgeCorrelation = createFragmentContainer(
                     }
                   }
                 }
-                cases(first: 20) {
+                cases(first: 500000) {
                   edges {
                     node {
                       id
@@ -1460,7 +1460,7 @@ const ReportKnowledgeCorrelation = createFragmentContainer(
               }
               ... on StixCyberObservable {
                 observable_value
-                groupings(first: 20) {
+                groupings(first: 500000) {
                   edges {
                     node {
                       id
@@ -1487,7 +1487,7 @@ const ReportKnowledgeCorrelation = createFragmentContainer(
                     }
                   }
                 }
-                reports(first: 20) {
+                reports(first: 500000) {
                   edges {
                     node {
                       id
@@ -1514,7 +1514,7 @@ const ReportKnowledgeCorrelation = createFragmentContainer(
                     }
                   }
                 }
-                cases(first: 20) {
+                cases(first: 500000) {
                   edges {
                     node {
                       id
