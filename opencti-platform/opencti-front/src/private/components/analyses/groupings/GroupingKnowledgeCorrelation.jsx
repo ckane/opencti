@@ -1299,7 +1299,7 @@ const GroupingKnowledgeCorrelation = createFragmentContainer(
                   x_opencti_order
                   x_opencti_color
                 }
-                reports(first: 500000) {
+                cases(first: 500000) {
                   edges {
                     node {
                       id
@@ -1353,11 +1353,12 @@ const GroupingKnowledgeCorrelation = createFragmentContainer(
                     }
                   }
                 }
-                cases(first: 500000) {
+                reports(first: 500000) {
                   edges {
                     node {
                       id
                       name
+                      published
                       confidence
                       entity_type
                       parent_types
@@ -1460,7 +1461,7 @@ const GroupingKnowledgeCorrelation = createFragmentContainer(
               }
               ... on StixCyberObservable {
                 observable_value
-                reports(first: 500000) {
+                cases(first: 500000) {
                   edges {
                     node {
                       id
@@ -1514,11 +1515,12 @@ const GroupingKnowledgeCorrelation = createFragmentContainer(
                     }
                   }
                 }
-                cases(first: 500000) {
+                reports(first: 500000) {
                   edges {
                     node {
                       id
                       name
+                      published
                       confidence
                       entity_type
                       parent_types
