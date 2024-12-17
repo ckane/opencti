@@ -1283,7 +1283,7 @@ const CaseRftKnowledgeCorrelation = createFragmentContainer(
           x_opencti_order
           x_opencti_color
         }
-        objects {
+        objects(first: 500000) {
           edges {
             node {
               ... on BasicObject {
