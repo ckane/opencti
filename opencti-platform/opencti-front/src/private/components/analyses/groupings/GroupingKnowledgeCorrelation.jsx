@@ -1304,7 +1304,6 @@ const GroupingKnowledgeCorrelation = createFragmentContainer(
                     node {
                       id
                       name
-                      published
                       confidence
                       entity_type
                       parent_types
@@ -1466,7 +1465,6 @@ const GroupingKnowledgeCorrelation = createFragmentContainer(
                     node {
                       id
                       name
-                      published
                       confidence
                       entity_type
                       parent_types

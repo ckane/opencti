@@ -1387,60 +1387,6 @@ const CaseRftKnowledgeCorrelation = createFragmentContainer(
                     }
                   }
                 }
-                groupings(first: 500000) {
-                  edges {
-                    node {
-                      id
-                      name
-                      context
-                      confidence
-                      entity_type
-                      parent_types
-                      created_at
-                      createdBy {
-                        ... on Identity {
-                          id
-                          name
-                          entity_type
-                        }
-                      }
-                      objectMarking {
-                        id
-                        definition_type
-                        definition
-                        x_opencti_order
-                        x_opencti_color
-                      }
-                    }
-                  }
-                }
-                reports(first: 500000) {
-                  edges {
-                    node {
-                      id
-                      name
-                      published
-                      confidence
-                      entity_type
-                      parent_types
-                      created_at
-                      createdBy {
-                        ... on Identity {
-                          id
-                          name
-                          entity_type
-                        }
-                      }
-                      objectMarking {
-                        id
-                        definition_type
-                        definition
-                        x_opencti_order
-                        x_opencti_color
-                      }
-                    }
-                  }
-                }
               }
               ... on StixDomainObject {
                 created
@@ -1578,60 +1524,6 @@ const CaseRftKnowledgeCorrelation = createFragmentContainer(
                     node {
                       id
                       name
-                      confidence
-                      entity_type
-                      parent_types
-                      created_at
-                      createdBy {
-                        ... on Identity {
-                          id
-                          name
-                          entity_type
-                        }
-                      }
-                      objectMarking {
-                        id
-                        definition_type
-                        definition
-                        x_opencti_order
-                        x_opencti_color
-                      }
-                    }
-                  }
-                }
-                groupings(first: 500000) {
-                  edges {
-                    node {
-                      id
-                      name
-                      context
-                      confidence
-                      entity_type
-                      parent_types
-                      created_at
-                      createdBy {
-                        ... on Identity {
-                          id
-                          name
-                          entity_type
-                        }
-                      }
-                      objectMarking {
-                        id
-                        definition_type
-                        definition
-                        x_opencti_order
-                        x_opencti_color
-                      }
-                    }
-                  }
-                }
-                reports(first: 500000) {
-                  edges {
-                    node {
-                      id
-                      name
-                      published
                       confidence
                       entity_type
                       parent_types
